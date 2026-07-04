@@ -1,0 +1,90 @@
+{
+    "manifest_version": 3,
+    "name": "nazeka",
+    "version": "0.4.10",
+    "author": "Wareya",
+    "homepage_url": "https://github.com/wareya/nazeka",
+    "description": "A rikai replacement.",
+
+    "permissions": [
+        "contextMenus",
+        "storage",
+        "tabs",
+        "clipboardRead",
+        "unlimitedStorage",
+        "offscreen"
+    ],
+
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*",
+        "file:///*"
+    ],
+
+    "background": {
+        "service_worker": "background-script.js"
+    },
+
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "img/closebutton24.png",
+                "img/leftarrow24.png",
+                "img/rightarrow24.png",
+                "dict/JMdict1.json",
+                "dict/JMdict2.json",
+                "dict/JMdict3.json",
+                "dict/JMdict4.json",
+                "dict/JMdict5.json",
+                "dict/JMdict6.json",
+                "dict/JMdict7.json",
+                "dict/JMdict8.json",
+                "dict/JMdict9.json",
+                "dict/JMdict10.json",
+                "dict/JMdict11.json",
+                "dict/JMdict12.json",
+                "dict/JMdict13.json",
+                "dict/jdic audio.txt",
+                "dict/deconjugator.json",
+                "reader.js",
+                "reader.html",
+                "mining.js",
+                "mining.html",
+                "livemining.js",
+                "livemining.html",
+                "json_config.js",
+                "json_config.html",
+                "jmdictabbreviations.html"
+            ],
+            "matches": ["<all_urls>"]
+        }
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*", "file:///*"],
+            "js": ["texthook.js"],
+            "all_frames": true
+        }
+    ],
+
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+
+    "action": {
+        "default_icon": {
+            "16": "img/action16.png",
+            "32": "img/action32.png",
+            "512": "img/action512.png"
+        },
+        "default_title": "Nazeka (disabled)"
+    },
+
+    "icons": {
+        "16": "img/enabled16.png",
+        "32": "img/enabled32.png",
+        "512": "img/enabled512.png"
+    }
+}
